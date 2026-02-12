@@ -342,19 +342,26 @@ body {
   
   /* Botón "Toca una flor" ajustado */
   .touch-flower-btn {
-    bottom: 5vh;
+    bottom: 3vh;
     padding: 10px 25px;
     font-size: 15px;
     max-width: 90%;
   }
   
-  /* Flores ENORMES en móvil */
+  /* Flores ajustadas para móvil */
   .flowers {
-    transform: scale(4) translateY(-30vh) !important;
+    transform: scale(1.8) !important;
+    position: relative;
+    bottom: -20vh;
   }
   
   .flower {
-    bottom: 5vmin !important;
+    bottom: 0vmin !important;
+  }
+  
+  /* Hacer las líneas de las flores más largas */
+  .flower__line {
+    height: 50vmin !important;
   }
   
   /* Ajustar controles de música */
@@ -414,16 +421,22 @@ body {
   .touch-flower-btn {
     padding: 8px 20px;
     font-size: 13px;
-    bottom: 3vh;
+    bottom: 2vh;
   }
   
-  /* Flores GIGANTES para pantallas muy pequeñas */
+  /* Flores para pantallas muy pequeñas */
   .flowers {
-    transform: scale(5) translateY(-35vh) !important;
+    transform: scale(2.2) !important;
+    position: relative;
+    bottom: -25vh;
   }
   
   .flower {
-    bottom: 3vmin !important;
+    bottom: 0vmin !important;
+  }
+  
+  .flower__line {
+    height: 45vmin !important;
   }
 }
 
@@ -1781,7 +1794,7 @@ body {
       }, 10);
       
       // Programar el cierre automático
-      messageTimeout = setTimeout(() => closeMessage(), 3000);
+      messageTimeout = setTimeout(() => closeMessage(), 10000);
     }
 
     function closeMessage() {
