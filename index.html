@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz San Valentín</title>
     <style>
 *,
@@ -11,13 +11,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-html {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  position: fixed;
 }
 
 :root {
@@ -31,16 +24,9 @@ body {
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
-  height: 100vh;
-  width: 100vw;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 .valentine-message {
@@ -304,139 +290,97 @@ body {
 /* Media queries para dispositivos móviles */
 @media screen and (max-width: 768px) {
   /* Asegurar que no haya overflow horizontal */
-  html, body {
-    overflow: hidden !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    position: fixed !important;
-    overscroll-behavior: none;
+  body {
+    overflow-x: hidden;
+    width: 100vw;
   }
   
   /* Título principal más pequeño en móvil */
   .valentine-message {
-    top: 5%;
+    top: 8%;
   }
   
   .valentine-message h1 {
-    font-size: 5vmin;
-    letter-spacing: 0.1vmin;
+    font-size: 6vmin;
+    letter-spacing: 0.2vmin;
   }
   
   /* Popup de mensaje más pequeño */
   .love-message {
-    padding: 15px 20px;
-    max-width: 80%;
-    margin: 0 auto;
+    padding: 20px 25px;
+    max-width: 85%;
+    margin: 0 20px;
   }
   
   .love-message p {
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.5;
   }
   
   .love-message .close-btn {
-    font-size: 22px;
-    top: 5px;
-    right: 10px;
+    font-size: 24px;
+    top: 8px;
+    right: 12px;
   }
   
-  /* Botón "Toca una flor" ajustado */
+  /* Botón "Toca una flor" más pequeño */
   .touch-flower-btn {
-    bottom: 3vh;
-    padding: 10px 25px;
-    font-size: 15px;
-    max-width: 90%;
+    bottom: 20px;
+    padding: 12px 30px;
+    font-size: 16px;
   }
   
-  /* Flores ajustadas para móvil */
+  /* Flores MUCHO más grandes en móvil */
   .flowers {
-    transform: scale(1.5) !important;
-    position: relative;
-    bottom: -10vh;
-  }
-  
-  .flower {
-    bottom: 0vmin !important;
-  }
-  
-  /* Hacer las líneas de las flores más largas */
-  .flower__line {
-    height: 55vmin !important;
+    transform: scale(2.5) translateY(-15vh);
   }
   
   /* Ajustar controles de música */
   .music-controls {
-    top: 10px;
-    right: 10px;
-    gap: 6px;
+    top: 15px;
+    right: 15px;
+    gap: 8px;
   }
   
   .music-button {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
   
   .volume-control {
-    padding: 6px 10px;
+    padding: 8px 12px;
   }
   
   .volume-slider {
-    width: 70px;
-  }
-  
-  /* Ajustar estrellas y fondo */
-  .night {
-    overflow: hidden;
+    width: 80px;
   }
 }
 
 /* Para pantallas muy pequeñas (menos de 480px) */
 @media screen and (max-width: 480px) {
-  html, body {
-    overflow: hidden !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    position: fixed !important;
-  }
-  
-  .valentine-message {
-    top: 3%;
+  body {
+    overflow-x: hidden;
+    width: 100vw;
   }
   
   .valentine-message h1 {
-    font-size: 4.5vmin;
-  }
-  
-  .love-message {
-    padding: 12px 18px;
-    max-width: 85%;
+    font-size: 5vmin;
   }
   
   .love-message p {
-    font-size: 14px;
-    line-height: 1.3;
+    font-size: 16px;
   }
   
   .touch-flower-btn {
-    padding: 8px 20px;
-    font-size: 13px;
-    bottom: 2vh;
+    padding: 10px 25px;
+    font-size: 14px;
+    bottom: 15px;
   }
   
-  /* Flores para pantallas muy pequeñas */
+  /* Flores AÚN MÁS GRANDES para pantallas muy pequeñas */
   .flowers {
-    transform: scale(1.7) !important;
-    position: relative;
-    bottom: -15vh;
-  }
-  
-  .flower {
-    bottom: 0vmin !important;
-  }
-  
-  .flower__line {
-    height: 50vmin !important;
+    transform: scale(3) translateY(-20vh);
   }
 }
 
@@ -1794,7 +1738,7 @@ body {
       }, 10);
       
       // Programar el cierre automático
-      messageTimeout = setTimeout(() => closeMessage(), 10000);
+      messageTimeout = setTimeout(() => closeMessage(), 3000);
     }
 
     function closeMessage() {
