@@ -1323,6 +1323,25 @@ body {
   transform: translateZ(0);
   will-change: transform;
 }
+/* ===== QUITAR FRANJA AZUL EN MÓVIL ===== */
+
+.flower,
+.flower * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+.touch-flower-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  outline: none;
+}
+.flower {
+  user-select: none;
+  -webkit-user-select: none;
+}
 
     </style>
 </head>
